@@ -1,0 +1,22 @@
+describe('template spec', () => {
+  it('passes', () => {
+    cy.visit('https://demowebshop.tricentis.com/register')
+    cy.get('#gender-female').click()
+    cy.get('#FirstName').type('beauty')
+    cy.get('#LastName').type('beast')
+    cy.get('#Email').type('laguhehe@gmail.com')
+    cy.get('#Password').type('123456')
+    cy.get('#ConfirmPassword').type('123456')
+    cy.get('#register-button').click()
+  })
+  it('Failed Login - Wrong Crede', () => {
+    cy.visit('https://demowebshop.tricentis.com/register')
+    cy.get('#gender-male').click()
+    cy.get('#FirstName').type('byuti')
+    cy.get('#LastName').type('beast')
+    cy.get('#Email').type('salah@salah.com')
+    cy.get('#Password').type('1234567')
+    cy.get('#ConfirmPassword').type('123456')
+    cy.get('#register-button').click()
+  })
+})
